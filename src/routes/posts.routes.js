@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('Fetching all blog posts...');
-});
+const { getPosts } = require('../controllers/posts.controller');
+
+router.get('/', getPosts);
 
 module.exports = router;
